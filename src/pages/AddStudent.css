@@ -1,0 +1,230 @@
+/* Container */
+
+.add-student-container{
+  background:white;
+  padding:35px;
+  border-radius:12px;
+  max-width:700px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+  margin: auto;
+}
+
+/* Title */
+
+.add-student-container h2{
+  margin-bottom:20px;
+  color:#333;
+  font-weight:600;
+}
+
+/* Inputs */
+
+.add-student-container input{
+  width:100%;
+  padding:12px;
+  margin-bottom:15px;
+  border:1px solid #ddd;
+  border-radius:6px;
+  font-size:14px;
+  transition:0.2s;
+}
+
+.add-student-container input:focus{
+  outline:none;
+  border-color:#1f9d8a;
+  box-shadow:0 0 0 2px rgba(31,157,138,0.15);
+}
+
+/* File input */
+
+.add-student-container input[type="file"]{
+  border:none;
+  padding:5px;
+}
+
+.preview-box{
+  margin-top:10px;
+  margin-bottom:15px;
+}
+
+.preview-box p{
+  font-size:14px;
+  margin-bottom:5px;
+}
+
+.preview-box img{
+  width:120px;
+  height:120px;
+  object-fit:cover;
+  border-radius:8px;
+  border:2px solid #eee;
+}
+
+/* Button */
+
+.add-student-container button{
+  width:60%;
+  padding:12px;
+  border:none;
+  border-radius:6px;
+  /* background:#f4a623; */
+  color:white;
+  font-size:16px;
+  font-weight:500;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+#add{
+  background:#f4a623;
+  width: 100%;
+}
+
+.add-student-container button:hover{
+  /* background:#e89b0c; */
+}
+
+
+/* ============================= */
+/* Students Table Section */
+/* ============================= */
+
+.students-title{
+  margin-top:40px;
+  margin-bottom:15px;
+  font-size:20px;
+  font-weight:600;
+  color:#333;
+}
+
+/* Table */
+
+.students-table{
+  width:100%;
+  border-collapse:collapse;
+  background:white;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+}
+
+/* Table Header */
+
+.students-table th{
+  background:#1f9d8a;
+  color:white;
+  font-weight:500;
+  padding:12px;
+  font-size:14px;
+}
+
+/* Table Cells */
+
+.students-table td{
+  padding:12px;
+  border-bottom:1px solid #eee;
+  font-size:14px;
+}
+
+/* Scrollable table wrapper */
+
+.students-table-wrapper{
+  max-height:300px;
+  overflow-y:auto;
+  overflow-x:auto;
+  border-radius:10px;
+}
+
+/* Scrollbar styling */
+
+.students-table-wrapper::-webkit-scrollbar{
+  width:6px;
+}
+
+.students-table-wrapper::-webkit-scrollbar-thumb{
+  background:#1f9d8a;
+  border-radius:10px;
+}
+
+.students-table-wrapper::-webkit-scrollbar-track{
+  background:#f1f1f1;
+}
+
+/* Row hover */
+
+.students-table tbody tr:hover{
+  background:#f9f9f9;
+}
+
+/* Student Image */
+
+.student-img{
+  width:45px;
+  height:45px;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid #eee;
+}
+
+/* ============================= */
+/* Buttons */
+/* ============================= */
+
+.edit-btn{
+  background:#167b6c;
+  color:white;
+  border:none;
+  padding:6px 10px;
+  border-radius:5px;
+  font-size:13px;
+  cursor:pointer;
+  margin-left:60px;
+  transition:0.2s;
+}
+
+.edit-btn:hover{
+  background:#167b6c;
+}
+
+.delete-btn{
+  background:#ea1700;
+  color:white;
+  border:none;
+  padding:4px 6px;
+  border-radius:5px;
+  font-size:13px;
+  cursor:pointer;
+  transition:0.2s;
+  margin-top: 20px;
+  margin-left:60px;
+}
+
+.delete-btn:hover{
+  background:#c0392b;
+}
+
+.standard-section{
+  margin-top:30px;
+}
+
+.standard-title{
+  margin-bottom:10px;
+  font-size:18px;
+  font-weight:600;
+  color:#444;
+}
+
+.student-search{
+  width:100%;
+  padding:10px;
+  margin-bottom:20px;
+  border:1px solid #ddd;
+  border-radius:6px;
+  font-size:14px;
+}
+
+.student-search:focus{
+  outline:none;
+  border-color:#1f9d8a;
+  box-shadow:0 0 0 2px rgba(31,157,138,0.15);
+}

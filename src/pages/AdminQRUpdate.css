@@ -1,0 +1,138 @@
+.admin-qr-page{
+  padding:40px 20px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin-top: -40px;
+}
+
+.admin-qr-page h2{
+  margin-bottom:30px;
+  text-align:center;
+}
+
+/* Main container */
+
+.qr-container{
+  display:flex;
+  gap:60px;
+  background:#ffffff;
+  padding:30px 40px;
+  border-radius:10px;
+  box-shadow:0 3px 12px rgba(0,0,0,0.08);
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+/* Current QR */
+
+.current-qr{
+  text-align:center;
+}
+
+.current-qr h3{
+  margin-bottom:15px;
+}
+
+.current-qr img{
+  width:180px;
+  height:180px;
+  object-fit:contain;
+  border:1px solid #e5e5e5;
+  border-radius:6px;
+  padding:10px;
+  background:#fafafa;
+}
+
+/* Upload section */
+
+.upload-qr{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  align-items:center;
+}
+
+.upload-qr input{
+  border:1px solid #ddd;
+  padding:8px;
+  border-radius:6px;
+  cursor:pointer;
+  width:100%;
+  max-width:250px;
+}
+
+.upload-qr button{
+  padding:10px 18px;
+  background:#1f9d8a;
+  color:white;
+  border:none;
+  border-radius:6px;
+  font-weight:500;
+  cursor:pointer;
+  transition:0.2s;
+  width:100%;
+  max-width:250px;
+}
+
+.upload-qr button:hover{
+  background:#168574;
+}
+
+.qr-preview{
+  text-align:center;
+  margin-top:10px;
+}
+
+.qr-preview img{
+  width:160px;
+  height:160px;
+  object-fit:contain;
+  border:1px solid #ddd;
+  border-radius:6px;
+  padding:8px;
+  background:#fafafa;
+}
+
+
+/* ===================== */
+/* Tablet Responsive */
+/* ===================== */
+
+@media (max-width:900px){
+
+  .qr-container{
+    flex-direction:column;
+    gap:30px;
+    padding:25px;
+  }
+
+}
+
+
+/* ===================== */
+/* Mobile Responsive */
+/* ===================== */
+
+@media (max-width:600px){
+
+  .admin-qr-page{
+    padding:25px 10px;
+  }
+
+  .admin-qr-page h2{
+    font-size:22px;
+  }
+
+  .current-qr img{
+    width:150px;
+    height:150px;
+  }
+
+  .qr-preview img{
+    width:140px;
+    height:140px;
+  }
+
+}

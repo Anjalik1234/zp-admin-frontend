@@ -1,0 +1,207 @@
+/* Page Background */
+
+.manage-teachers-page {
+  min-height: 100vh;
+  background: #eef1f5;
+  display: flex;
+  justify-content: center;
+  padding: 40px 15px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+
+/* Main Card */
+
+.manage-teachers-container {
+  width: 100%;
+  max-width: 900px;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+
+/* Headings */
+
+.manage-teachers-container h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.manage-teachers-container h3 {
+  margin-top: 40px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+
+/* Form Layout */
+
+.teacher-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+
+/* Inputs */
+
+.teacher-form input,
+.teacher-form select {
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  font-size: 15px;
+  transition: all 0.2s ease;
+}
+
+.teacher-form input:focus,
+.teacher-form select:focus {
+  outline: none;
+  border-color: #f5a623;
+  box-shadow: 0 0 0 2px rgba(245,166,35,0.15);
+}
+
+
+/* File input */
+
+.teacher-form input[type="file"] {
+  border: none;
+  padding: 5px;
+}
+
+
+/* Preview */
+
+.preview-image {
+  margin-top: 10px;
+}
+
+.preview-image img {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+
+/* Submit Button */
+
+.submit-btn {
+  margin-top: 10px;
+  width: 70%;
+  display: block;
+  margin: 20px auto;
+  padding: 14px;
+  font-size: 16px;
+  background: #f5a623;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.submit-btn:hover {
+  background: #e89514;
+}
+
+
+/* Table */
+
+.teachers-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.teachers-table th {
+  background: #f7f7f7;
+  padding: 12px;
+  text-align: left;
+}
+
+.teachers-table td {
+  padding: 12px;
+  border-top: 1px solid #eee;
+}
+
+.teachers-table img {
+  border-radius: 6px;
+}
+
+
+/* Buttons */
+
+.action-btn {
+  padding: 6px 10px;
+  margin-right: 6px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background: #1f9d8a;
+  color: white;
+}
+
+.delete-btn {
+  background: #e74c3c;
+  color: white;
+}
+
+.edit-btn:hover {
+  background: #2980b9;
+}
+
+.delete-btn:hover {
+  background: #c0392b;
+}
+
+
+/* ========================= */
+/* Responsive */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  .manage-teachers-container {
+    padding: 25px;
+  }
+
+  .teachers-table th,
+  .teachers-table td {
+    font-size: 14px;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .teachers-table,
+  .teachers-table thead,
+  .teachers-table tbody,
+  .teachers-table th,
+  .teachers-table td,
+  .teachers-table tr {
+    display: block;
+  }
+
+  .teachers-table thead {
+    display: none;
+  }
+
+  .teachers-table tr {
+    background: #f9f9f9;
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 8px;
+  }
+
+  .teachers-table td {
+    border: none;
+    padding: 6px 0;
+  }
+
+}
