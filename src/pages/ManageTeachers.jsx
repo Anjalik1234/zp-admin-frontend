@@ -28,7 +28,7 @@ function ManageTeachers() {
 
     try {
 
-      const res = await fetch("http://localhost:5000/api/teachers");
+      const res = await fetch("https://zpsajur-backend.onrender.com/api/teachers");
       const data = await res.json();
 
       setTeachers(Array.isArray(data) ? data : data.teachers || []);
@@ -126,7 +126,7 @@ function ManageTeachers() {
 
       if (editingId) {
 
-        await fetch(`http://localhost:5000/api/teachers/${editingId}`, {
+        await fetch(`https://zpsajur-backend.onrender.com/api/teachers/${editingId}`, {
           method: "PUT",
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`
@@ -136,7 +136,7 @@ function ManageTeachers() {
 
       } else {
 
-        await fetch("http://localhost:5000/api/teachers", {
+        await fetch("https://zpsajur-backend.onrender.com/api/teachers", {
           method: "POST",
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`
@@ -192,7 +192,7 @@ function ManageTeachers() {
 
     try {
 
-      await fetch(`http://localhost:5000/api/teachers/${id}`, {
+      await fetch(`https://zpsajur-backend.onrender.com/api/teachers/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`

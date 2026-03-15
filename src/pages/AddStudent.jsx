@@ -27,7 +27,7 @@ function AddStudent() {
   const fetchStudents = useCallback(async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/students/all",
+        "https://zpsajur-backend.onrender.com/api/students/all",
         {
           headers: { Authorization: `Bearer ${token}` }
         }
@@ -76,7 +76,7 @@ function AddStudent() {
       if (editId) {
 
         await axios.put(
-          `http://localhost:5000/api/students/update/${editId}`,
+          `https://zpsajur-backend.onrender.com/api/students/update/${editId}`,
           formData,
           {
             headers: {
@@ -92,7 +92,7 @@ function AddStudent() {
       } else {
 
         await axios.post(
-          "http://localhost:5000/api/students/add",
+          "https://zpsajur-backend.onrender.com/api/students/add",
           formData,
           {
             headers: {
@@ -129,7 +129,7 @@ function AddStudent() {
     try {
 
       await axios.delete(
-        `http://localhost:5000/api/students/delete/${id}`,
+        `https://zpsajur-backend.onrender.com/api/students/delete/${id}`,
         {
           headers: { Authorization: `Bearer ${token}` }
         }

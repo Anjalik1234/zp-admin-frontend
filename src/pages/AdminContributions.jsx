@@ -16,7 +16,7 @@ function AdminContributions() {
       const token = localStorage.getItem("token");
 
       const response = await fetch(
-        "http://localhost:5000/api/contributions/all",
+        "https://zpsajur-backend.onrender.com/api/contributions/all",
         {
           method: "GET",
           headers: {
