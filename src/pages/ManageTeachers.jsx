@@ -158,26 +158,26 @@ function ManageTeachers() {
   };
 
 
-  // ===============================
-  // Edit Teacher
-  // ===============================
+  // // ===============================
+  // // Edit Teacher
+  // // ===============================
 
-  const editTeacher = (t) => {
+  // const editTeacher = (t) => {
 
-    setTeacher({
-      name_mr: t.name.mr,
-      name_en: t.name.en,
-      position_mr: t.position.mr,
-      position_en: t.position.en,
-      education: t.education,
-      category: t.category,
-      photo: null
-    });
+  //   setTeacher({
+  //     name_mr: t.name.mr,
+  //     name_en: t.name.en,
+  //     position_mr: t.position.mr,
+  //     position_en: t.position.en,
+  //     education: t.education,
+  //     category: t.category,
+  //     photo: null
+  //   });
 
-    setPreview(t.photo);
-    setEditingId(t._id);
+  //   setPreview(t.photo);
+  //   setEditingId(t._id);
 
-  };
+  // };
 
 
   // ===============================
@@ -345,12 +345,12 @@ function ManageTeachers() {
 
                 <td>
 
-                  <button
+                  {/* <button
                     className="action-btn edit-btn"
                     onClick={() => editTeacher(t)}
                   >
                     Edit
-                  </button>
+                  </button> */}
 
                   <button
                     className="action-btn delete-btn"
