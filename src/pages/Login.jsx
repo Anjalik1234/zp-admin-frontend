@@ -21,7 +21,7 @@ function Login() {
     try {
 
       const res = await axios.post(
-        "https://zpsajur-backend.onrender.com/api/admin/login",
+        "https://zpsajur-backend-production.up.railway.app/api/admin/login",
         { email, password }
       );
 
