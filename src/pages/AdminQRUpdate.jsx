@@ -16,7 +16,7 @@ function AdminQRUpdate() {
 
         try {
 
-            const res = await fetch("https://zpsajur-backend.onrender.com/api/qr");
+            const res = await fetch("https://zpsajur-backend-production.up.railway.app/api/qr");
 
             const data = await res.json();
 
@@ -49,7 +49,7 @@ function AdminQRUpdate() {
             formData.append("qr", qrFile);
 
             const response = await fetch(
-                "https://zpsajur-backend.onrender.com/api/qr/update",
+                "https://zpsajur-backend-production.up.railway.app/api/qr/update",
                 {
                     method: "POST",
                     headers: {
