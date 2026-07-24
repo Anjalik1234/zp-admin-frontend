@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 
 import { getPastQuizzes } from "../../services/quizApi";
 
@@ -13,7 +13,6 @@ function PastQuizzes({ setActivePage }) {
 
     const [error, setError] = useState("");
 
-    const navigate = useNavigate();
 
     const fetchPastQuizzes = async () => {
 

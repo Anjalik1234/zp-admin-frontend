@@ -8,7 +8,7 @@ import {
     publishQuiz
 } from "../../services/quizApi";
 
-function CreateQuiz({setActivePage}) {
+function CreateQuiz({ setActivePage }) {
 
     const navigate = useNavigate();
 
@@ -53,32 +53,31 @@ function CreateQuiz({setActivePage}) {
 
     useEffect(() => {
 
-        const generatedQuestions = [];
+        setQuestions((prevQuestions) => {
 
-        for (let i = 0; i < Number(numberOfQuestions); i++) {
+            const generatedQuestions = [];
 
-            generatedQuestions.push(
+            for (let i = 0; i < Number(numberOfQuestions); i++) {
 
-                questions[i] || {
+                generatedQuestions.push(
 
-                    question: "",
+                    prevQuestions[i] || {
 
-                    options: [
-                        "",
-                        "",
-                        "",
-                        ""
-                    ],
+                        question: "",
 
-                    correctAnswer: ""
+                        options: ["", "", "", ""],
 
-                }
+                        correctAnswer: ""
 
-            );
+                    }
 
-        }
+                );
 
-        setQuestions(generatedQuestions);
+            }
+
+            return generatedQuestions;
+
+        });
 
     }, [numberOfQuestions]);
 
