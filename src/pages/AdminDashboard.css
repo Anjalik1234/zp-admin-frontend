@@ -75,9 +75,47 @@
   transition:0.2s;
 }
 
-.nav-links button:hover{
+/* .nav-links button:hover{
   background:#f4a623;
   color:white;
+} */
+
+.nav-links button{
+
+    padding:10px 18px;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    background:white;
+
+    transition:all .25s ease;
+
+}
+
+.nav-links button:hover{
+
+    background:#f4a623;
+
+    color:white;
+
+    transform:translateY(-2px);
+
+}
+
+.active-nav{
+
+    background:#f4a623 !important;
+
+    color:white;
+
+    box-shadow:0 4px 12px rgba(244,166,35,.35);
+
 }
 
 

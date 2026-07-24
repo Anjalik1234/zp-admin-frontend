@@ -2,15 +2,25 @@ import { useState } from "react";
 import AddStudent from "./AddStudent";
 import ManageTeachers from "./ManageTeachers";
 import "./AdminDashboard.css";
+import { useNavigate } from "react-router-dom";
 
 import schoolLogo from "../assets/zp-logo.png";
 import AdminContributions from "./AdminContributions";
 import AdminQRUpdate from "./AdminQRUpdate";
+import AdminQuiz from "./AdminQuiz";
 
 function AdminDashboard() {
 
   const [activeSection, setActiveSection] = useState("students");
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleLogout = () => { 
+
+    localStorage.removeItem("token");
+
+    navigate("/");
+  };
 
   return (
 
@@ -50,20 +60,43 @@ function AdminDashboard() {
 
         <div className={`nav-links ${menuOpen ? "active" : ""}`}>
 
-          <button onClick={() => setActiveSection("students")}>
+          <button
+            className={activeSection === "students" ? "active-nav" : ""}
+            onClick={() => setActiveSection("students")}
+          >
             Add Students
           </button>
 
-          <button onClick={() => setActiveSection("teachers")}>
+          <button
+            className={activeSection === "teachers" ? "active-nav" : ""}
+            onClick={() => setActiveSection("teachers")}
+          >
             Teachers
           </button>
 
-          <button onClick={() => setActiveSection("contributions")}>
+          <button
+            className={activeSection === "contributions" ? "active-nav" : ""}
+            onClick={() => setActiveSection("contributions")}
+          >
             Contributions
           </button>
 
-          <button onClick={() => setActiveSection("qr")}>
+          <button
+            className={activeSection === "qr" ? "active-nav" : ""}
+            onClick={() => setActiveSection("qr")}
+          >
             QR
+          </button>
+
+          <button
+            className={activeSection === "quiz" ? "active-nav" : ""}
+            onClick={() => setActiveSection("quiz")}
+          >
+            Quizzes
+          </button>
+
+          <button onClick={handleLogout}>
+            Log Out
           </button>
 
         </div>
@@ -82,6 +115,8 @@ function AdminDashboard() {
         {activeSection === "contributions" && <AdminContributions />}
 
         {activeSection === "qr" && <AdminQRUpdate />}
+
+        {activeSection === "quiz" && <AdminQuiz />}
 
       </div>
 
