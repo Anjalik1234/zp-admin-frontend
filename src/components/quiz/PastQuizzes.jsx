@@ -54,6 +54,12 @@ function PastQuizzes({ setActivePage }) {
 
     }, []);
 
+    const handleRepublishSuccess = (quizId) => {
+        setQuizzes(prev =>
+            prev.filter(quiz => quiz._id !== quizId)
+        );
+    };
+
     return (
 
         <div className="past-quizzes-page">
@@ -166,13 +172,10 @@ function PastQuizzes({ setActivePage }) {
                             quizzes.map((quiz, index) => (
 
                                 <PastQuizCard
-
                                     key={quiz._id}
-
                                     quiz={quiz}
-
                                     quizNumber={index + 1}
-
+                                    onRepublishSuccess={() => handleRepublishSuccess(quiz._id)}
                                 />
 
                             ))

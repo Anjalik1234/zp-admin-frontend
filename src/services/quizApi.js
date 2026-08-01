@@ -6,6 +6,12 @@ const API = axios.create({
 
 });
 
+// const API = axios.create({
+//     baseURL: "http://localhost:5000"
+// });
+
+
+
 // Automatically attach JWT token to every request
 API.interceptors.request.use(
 
@@ -171,6 +177,16 @@ export const getQuizById = async (quizId) => {
 
         }
 
+    );
+
+    return response.data;
+
+};
+
+export const republishQuiz = async (quizId) => {
+
+    const response = await API.put(
+        `/api/quizzes/republish/${quizId}`
     );
 
     return response.data;

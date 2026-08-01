@@ -477,16 +477,31 @@
 
 }
 
-.modal-header {
+.modal {
+    width: 80%;
+    max-width: 900px;
+    max-height: 90vh;
 
     display: flex;
+    flex-direction: column;
 
+    background: white;
+    border-radius: 12px;
+}
+
+.modal-header {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+
+    display: flex;
     justify-content: space-between;
-
     align-items: center;
+}
 
-    margin-bottom: 25px;
-
+.modal-body {
+    overflow-y: auto;
+    flex: 1;
+    padding: 20px;
 }
 
 .modal-header h2 {
@@ -1876,6 +1891,22 @@
 .publish-btn:hover{
 
     background:#23867a;
+
+}
+
+.republish-btn:hover{
+
+    background:#dd8f08;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 6px 12px rgba(0,0,0,.18);
+
+}
+
+.republish-btn:active{
+
+    transform:scale(.96);
 
 }
 

@@ -4,7 +4,9 @@ import {
 
     getRankings,
 
-    getQuizById
+    getQuizById,
+
+    republishQuiz
 
 } from "../../services/quizApi";
 
@@ -12,7 +14,9 @@ function PastQuizCard({
 
     quiz,
 
-    quizNumber
+    quizNumber,
+
+    onRepublishSuccess
 
 }) {
 
@@ -88,6 +92,45 @@ function PastQuizCard({
 
                 "Failed to load questions."
 
+            );
+
+        }
+
+        finally {
+
+            setLoading(false);
+
+        }
+
+    };
+
+    const handleRepublish = async () => {
+
+        const confirmRepublish = window.confirm(
+            "Are you sure you want to republish this quiz?\n\nPrevious submissions and rankings will be deleted."
+        );
+
+        if (!confirmRepublish) return;
+
+        try {
+
+            setLoading(true);
+
+            setError("");
+
+            await republishQuiz(quiz._id);
+
+            alert("Quiz republished successfully.");
+
+            onRepublishSuccess();   // <-- Write it here
+
+        }
+
+        catch (error) {
+
+            setError(
+                error.response?.data?.message ||
+                "Failed to republish quiz."
             );
 
         }
@@ -293,6 +336,14 @@ function PastQuizCard({
 
                     </button>
 
+                    <button
+                        className="republish-btn"
+                        onClick={handleRepublish}
+                        disabled={loading}
+                    >
+                        🔄 Republish
+                    </button>
+
                 </div>
 
                 {
@@ -461,120 +512,74 @@ function PastQuizCard({
 
             }
 
-            {
+            {showQuestions && (
 
-                showQuestions && (
+                <div className="modal-overlay">
 
-                    <div className="modal-overlay">
+                    <div className="modal">
 
-                        <div className="modal">
+                        <div className="modal-header">
 
-                            <div className="modal-header">
+                            <h3>Quiz Questions</h3>
 
-                                <h3>
+                            <button
+                                className="close-btn"
+                                onClick={() => setShowQuestions(false)}
+                            >
+                                ✕
+                            </button>
 
-                                    Quiz Questions
+                        </div>
 
-                                </h3>
+                        <div className="modal-body">
 
-                                <button
+                            {questions.map((question, index) => (
 
-                                    className="close-btn"
-
-                                    onClick={() =>
-
-                                        setShowQuestions(false)
-
-                                    }
-
+                                <div
+                                    key={question._id}
+                                    className="question-card"
                                 >
 
-                                    ✕
+                                    <h4>
+                                        Q{index + 1}. {question.question}
+                                    </h4>
 
-                                </button>
+                                    {question.options.map((option, optionIndex) => (
 
-                            </div>
+                                        <p
+                                            key={optionIndex}
+                                            style={{
+                                                color:
+                                                    optionIndex + 1 === question.correctAnswer
+                                                        ? "green"
+                                                        : "black",
+                                                fontWeight:
+                                                    optionIndex + 1 === question.correctAnswer
+                                                        ? "bold"
+                                                        : "normal"
+                                            }}
+                                        >
+                                            {option}
 
-                            {
+                                            {optionIndex + 1 === question.correctAnswer && " ✓"}
 
-                                questions.map((question, index) => (
+                                        </p>
 
-                                    <div
+                                    ))}
 
-                                        key={question._id}
+                                    <hr />
 
-                                        className="question-card"
+                                </div>
 
-                                    >
-
-                                        <h4>
-
-                                            Q{index + 1}. {question.question}
-
-                                        </h4>
-
-                                        {
-
-                                            question.options.map((option, optionIndex) => (
-
-                                                <p
-
-                                                    key={optionIndex}
-
-                                                    style={{
-
-                                                        color:
-
-                                                            optionIndex + 1 === question.correctAnswer
-
-                                                                ? "green"
-
-                                                                : "black",
-
-                                                        fontWeight:
-
-                                                            optionIndex + 1 === question.correctAnswer
-
-                                                                ? "bold"
-
-                                                                : "normal"
-
-                                                    }}
-
-                                                >
-
-                                                    {option}
-
-                                                    {
-
-                                                        optionIndex + 1 === question.correctAnswer &&
-
-                                                        " ✓"
-
-                                                    }
-
-                                                </p>
-
-                                            ))
-
-                                        }
-
-                                        <hr />
-
-                                    </div>
-
-                                ))
-
-                            }
+                            ))}
 
                         </div>
 
                     </div>
 
-                )
+                </div>
 
-            }
-
+            )}
         </>
 
     );
