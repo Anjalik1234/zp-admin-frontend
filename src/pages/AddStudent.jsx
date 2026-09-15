@@ -111,7 +111,7 @@ function AddStudent() {
         std: "",
         birthMonth: "",
         birthDay: "",
-        academicYear: "2025-26"
+        academicYear: getCurrentAcademicYear()
       });
 
       setImage(null);
