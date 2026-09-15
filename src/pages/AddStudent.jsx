@@ -3,6 +3,8 @@ import axios from "axios";
 import imageCompression from "browser-image-compression";
 import "./AddStudent.css";
 
+const getCurrentAcademicYear = () => { const today = new Date(); const year = today.getFullYear(); const month = today.getMonth() + 1; if (month >= 6) { return `${year}-${String(year + 1).slice(2)}`; } else { return `${year - 1}-${String(year).slice(2)}`; } };
+
 function AddStudent() {
 
   const [student, setStudent] = useState({
@@ -10,7 +12,7 @@ function AddStudent() {
     std: "",
     birthMonth: "",
     birthDay: "",
-    academicYear: "2025-26"
+    academicYear: getCurrentAcademicYear()
   });
 
   const [students, setStudents] = useState([]);
